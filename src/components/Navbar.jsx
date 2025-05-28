@@ -23,7 +23,9 @@ const Navbar = () => {
             src="/assets/github.svg"
             alt="github logo"
           />
+          <a className='cursor-pointer' href="https://github.com/vedantb23/PassOP">
           <span className="font-bold px-2">GitHub</span>
+          </a>
         </button>
       </div>
     </nav>

@@ -21,6 +21,7 @@ const Manager = () => {
       passwordREf.current.type = "text";
     }
   };
+// <<<<<<< HEAD
   const GETPassword = async() => {
     let req = await fetch("http://localhost:3000/");
     let passwords = await req.json();
@@ -38,6 +39,61 @@ const Manager = () => {
     ) {
       const newId = uuidv4(); // generate UUID once
       const newPassword = { ...form, id: newId };
+// =======
+  // const savePassword = () => {
+  //   let passwords = localStorage.getItem("passwords");
+  //   localStorage.setItem("passwords", JSON.stringify([...PassArr, form]))
+    
+  // };
+  const savePassword = () => {
+    // const existing = localStorage.getItem("passwords");
+    // const parsed = existing ? JSON.parse(existing) : [];
+    // const updated = [...parsed, form];
+
+    // localStorage.setItem("passwords", JSON.stringify(updated));
+    // setPassArr(updated); //
+    // // console.log(updated);
+    // toast.success("Password Saved Successfully!", {
+    //   position: "bottom-right",
+    //   autoClose: 5000,
+    //   hideProgressBar: false,
+    //   closeOnClick: false,
+    //   pauseOnHover: true,
+    //   draggable: true,
+    //   progress: undefined,
+    //   theme: "colored",
+    //   transition: Bounce,
+    // }); if (form.site !== '' && form.password !== '') {
+      if (form.site !== "" && form.password !== "") {
+        const newPassword = { ...form, id: uuidv4() };
+        const updatedArray = [...PassArr, newPassword];
+
+        setPassArr(updatedArray);
+        localStorage.setItem("passwords", JSON.stringify(updatedArray));
+        setform({ site: "", username: "", password: "" });
+
+        toast.success("Password Saved Successfully!", {
+          position: "top-right",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          theme: "light",
+        });
+      } else {
+        toast.error("Please enter all the fields!", {
+          position: "top-right",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          theme: "light",
+        });
+      }
+  }
+// >>>>>>> 4d6624b15c0a5d27d1daa66529675bc6da95a542
 
       setPassArr([...PassArr, newPassword]);
 
@@ -94,6 +150,7 @@ const Manager = () => {
   }
 const editPassword=(id) => {
 
+// <<<<<<< HEAD
   setform({ ...PassArr.filter((i) => i.id === id)[0], id: id });
   deletePassword(id);
   setPassArr(PassArr.filter((item) => item.id !== id));
@@ -112,18 +169,37 @@ const editPassword=(id) => {
       body: JSON.stringify({ id }),
     });
 
-    toast.error("Password Deleted!", {
-      position: "bottom-right",
-      autoClose: 1500,
-      hideProgressBar: false,
-      closeOnClick: false,
-      pauseOnHover: true,
-      draggable: true,
-      progress: undefined,
-      theme: "light",
-      transition: Bounce,
-    });
+// =======
+  setform(PassArr.filter((item) => item.id === id)[0]);
+  setPassArr(PassArr.filter((item) => item.id !== id));
+  localStorage.setItem(
+    "passwords",
+    JSON.stringify(PassArr.filter((item) => item.id !== id))
+  );
+
+
+}
+//   const deletePassword = (id) => {
+//     setPassArr(PassArr.filter(item => { item.id !== id }))
+//     localStorage.setItem("passwords", JSON.stringify(PassArr.filter(item => item.id !== id)))
+// // >>>>>>> 4d6624b15c0a5d27d1daa66529675bc6da95a542
+//     toast.error("Password Deleted!", {
+//       position: "bottom-right",
+//       autoClose: 1500,
+//       hideProgressBar: false,
+//       closeOnClick: false,
+//       pauseOnHover: true,
+//       draggable: true,
+//       progress: undefined,
+//       theme: "light",
+//       transition: Bounce,
+//     });
+// <<<<<<< HEAD
   };
+// =======
+
+// };
+// >>>>>>> 4d6624b15c0a5d27d1daa66529675bc6da95a542
   return (
     <>
       <ToastContainer
@@ -326,6 +402,6 @@ const editPassword=(id) => {
       </div>
     </>
   );
-};
+// };
 
 export default Manager;
