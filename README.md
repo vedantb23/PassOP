@@ -1,127 +1,50 @@
-# 🔐 PassOP — Password Manager with CLI & TUI Support
+# PassOP - Password Manager
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
-[![Python Version](https://img.shields.io/badge/Python-3.10+-blue.svg)](https://www.python.org/)
-[![Issues](https://img.shields.io/github/issues/vedantb23/PassOP)](https://github.com/vedantb23/PassOP/issues)
-[![Stars](https://img.shields.io/github/stars/vedantb23/PassOP?style=social)](https://github.com/vedantb23/PassOP/stargazers)
+PassOP is a secure and user-friendly password manager built with React and Tailwind CSS. It allows users to store, manage, and retrieve site credentials securely in the browser's local storage.
 
-PassOP is a secure and minimal **Password Manager** built with Python. It supports both **CLI** and **TUI** interfaces, making it efficient and user-friendly for developers and terminal lovers. Passwords are encrypted and stored locally using industry-grade algorithms.
+## Features
+- **Secure Storage**: Safely store passwords in browser local storage.
+- **User-Friendly Interface**: Intuitive design for easy management.
+- **Add, Edit, Delete**: Manage credentials with simple operations.
+- **Responsive Design**: Seamless experience across devices with Tailwind CSS.
 
----
+## Tech Stack
+- **Frontend**: React, Tailwind CSS
+- **Storage**: Browser Local Storage
+- **Build Tool**: Vite, npm
 
-## 🚀 Features
+## Installation
 
-- 🔐 AES-256 encryption
-- 🧾 Store, update, delete credentials
-- 📋 Copy passwords to clipboard (securely)
-- 📜 Search credentials
-- 🖥️ CLI + TUI with Rich experience
-- 🧪 Unit-tested core components
+1. **Clone the Repository**:
+   ```bash
+   git clone https://github.com/vedantb23/PassOP.git
+   cd PassOP
+Install Dependencies:
+bash
 
----
+Copy
+npm install
+Run the Application:
+bash
 
-## 📸 Preview
+Copy
+npm run dev
+Open http://localhost:5173 in your browser.
+Usage
+Open the app in your browser.
+Add credentials by entering site details and passwords.
+View, edit, or delete credentials from the dashboard.
+Passwords are stored in local storage for persistence.
+Contributing
+Fork the repository.
+Create a branch (git checkout -b feature/your-feature).
+Commit changes (git commit -m 'Add your feature').
+Push to the branch (git push origin feature/your-feature).
+Open a Pull Request.
+License
+Licensed under the MIT License. See LICENSE for details.
 
-### TUI Interface
+Contact
+Reach out to Stryker or open an issue.
 
-![TUI Demo](assets/tui-demo.gif)
-
----
-
-## 📦 Installation
-
-```bash
-git clone https://github.com/vedantb23/PassOP.git
-cd PassOP
-pip install -r requirements.txt
-```
-
----
-
-## 🛠️ Usage
-
-### 🔧 Initialize the Vault
-
-```bash
-python passop.py init
-```
-
-### ➕ Add a New Entry
-
-```bash
-python passop.py add
-```
-
-### 📄 List All Entries
-
-```bash
-python passop.py list
-```
-
-### 🔍 Search Entry
-
-```bash
-python passop.py search
-```
-
-### 🧑‍💻 Launch TUI Mode
-
-```bash
-python passop.py tui
-```
-
----
-
-## 🔐 Security
-
-- Uses Python's `cryptography` package with **Fernet symmetric encryption** (AES under the hood).
-- Passwords are only decrypted in-memory and never logged or exposed.
-- Vault file is locked with a **master password**.
-
----
-
-## 📁 Project Structure
-
-```
-PassOP/
-├── passop.py          # Main entry point
-├── core/              # Encryption & database logic
-├── tui/               # Terminal UI built with Rich
-├── utils/             # Helper functions
-├── assets/            # Demo GIFs and images
-├── requirements.txt
-└── README.md
-```
-
----
-
-## 🧪 Running Tests
-
-```bash
-pytest
-```
-
----
-
-## 🤝 Contributing
-
-Contributions, issues and feature requests are welcome!  
-Feel free to check the [issues page](https://github.com/vedantb23/PassOP/issues) or submit a [pull request](https://github.com/vedantb23/PassOP/pulls).
-
----
-
-## 📄 License
-
-This project is licensed under the [MIT License](LICENSE).
-
----
-
-## 💡 Inspiration
-
-PassOP was built to combine the power of terminal tools with the security of modern encryption — keeping privacy in your hands.
-
----
-
-## ⭐️ Show Your Support
-
-If you found this project helpful, please consider giving it a ⭐ on GitHub!
+Happy Password Managing with PassOP! 🔒
